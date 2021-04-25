@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>dev.finance$</title>
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo.svg" alt="Logo Dev Finance" />
+    </header>
+    <main class="container">
+      <section id="balance">
+        <h2 class="sr-only">Balance</h2>
+
+        <div class="card">
+          <h3>
+            <span> Income </span>
+            <img src="./img/income.svg" alt="Income Image" />
+          </h3>
+          <p>$5.000,00</p>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span> Expense </span>
+            <img src="./img/expense.svg" alt="Expense Image" />
+          </h3>
+          <p>$2.000,00</p>
+        </div>
+
+        <div class="card total">
+          <h3>
+            <span> Total </span>
+            <img src="./img/total.svg" alt="Total Cash Image" />
+          </h3>
+          <p>$3.000,00</p>
+        </div>
+      </section>
+
+      <section id="transaction">
+        <h2 class="sr-only">Transactions</h2>
+
+        <a href="#" class="button new" onclick="Modal.open()"
+          >+ New Transation</a
+        >
+
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Value</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="description">Electricity</td>
+              <td class="expense">- $230,00</td>
+              <td class="date">10/04/2021</td>
+              <td>
+                <img src="./img/minus.svg" alt="Remove Transaction" />
+              </td>
+            </tr>
+            <tr>
+              <td class="description">Salary</td>
+              <td class="income">$2500,00</td>
+              <td class="date">10/04/2021</td>
+              <td>
+                <img src="./img/minus.svg" alt="Remove Transaction" />
+              </td>
+            </tr>
+            <tr>
+              <td class="description">Internet</td>
+              <td class="expense">- $100,00</td>
+              <td class="date">10/04/2021</td>
+              <td>
+                <img src="./img/minus.svg" alt="Remove Transaction" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">New Transation</div>
+        <form action="" method="GET">
+          <div class="input-group">
+            <label class="sr-only" for="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Description"
+              value=""
+            />
+          </div>
+          <div class="input-group">
+            <label class="sr-only" for="amount">Value</label>
+            <input
+              type="number"
+              step="0.01"
+              name="amount"
+              id="amount"
+              placeholder="0,00"
+            />
+            <small class="info">Use "-" to negative and "," to cents</small>
+          </div>
+          <div class="input-group">
+            <label class="sr-only" for="date">Date</label>
+            <input type="date" name="date" id="date" />
+          </div>
+
+          <div class="input-group actions">
+            <a href="#" onclick="Modal.close()" class="button cancel">Cancel</a>
+            <button>Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+    <footer>
+      <p>dev.finance$</p>
+    </footer>
+  </body>
+</html>
