@@ -25,7 +25,7 @@
             <span> Income </span>
             <img src="./img/income.svg" alt="Income Image" />
           </h3>
-          <p>$5.000,00</p>
+          <p id="incomeDisplay"></p>
         </div>
 
         <div class="card">
@@ -33,7 +33,7 @@
             <span> Expense </span>
             <img src="./img/expense.svg" alt="Expense Image" />
           </h3>
-          <p>$2.000,00</p>
+          <p id="expenseDisplay"></p>
         </div>
 
         <div class="card total">
@@ -41,7 +41,7 @@
             <span> Total </span>
             <img src="./img/total.svg" alt="Total Cash Image" />
           </h3>
-          <p>$3.000,00</p>
+          <p id="totalDisplay"></p>
         </div>
       </section>
 
@@ -49,7 +49,7 @@
         <h2 class="sr-only">Transactions</h2>
 
         <a href="#" class="button new" onclick="Modal.open()"
-          >+ New Transation</a
+          >+ New Transaction</a
         >
 
         <table id="data-table">
@@ -61,40 +61,15 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="description">Electricity</td>
-              <td class="expense">- $230,00</td>
-              <td class="date">10/04/2021</td>
-              <td>
-                <img src="./img/minus.svg" alt="Remove Transaction" />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Salary</td>
-              <td class="income">$2500,00</td>
-              <td class="date">10/04/2021</td>
-              <td>
-                <img src="./img/minus.svg" alt="Remove Transaction" />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Internet</td>
-              <td class="expense">- $100,00</td>
-              <td class="date">10/04/2021</td>
-              <td>
-                <img src="./img/minus.svg" alt="Remove Transaction" />
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
     </main>
 
     <div class="modal-overlay">
       <div class="modal">
-        <div id="form">New Transation</div>
-        <form action="" method="GET">
+        <div id="form">New Transaction</div>
+        <form action="" onsubmit="Form.submit(event)">
           <div class="input-group">
             <label class="sr-only" for="description">Description</label>
             <input
@@ -114,7 +89,7 @@
               id="amount"
               placeholder="0,00"
             />
-            <small class="info">Use "-" to negative and "," to cents</small>
+            <small class="info">Use "-" to negative and "." to cents</small>
           </div>
           <div class="input-group">
             <label class="sr-only" for="date">Date</label>
@@ -129,10 +104,10 @@
       </div>
     </div>
 
-    <script src="./script.js"></script>
-
     <footer>
       <p>dev.finance$</p>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>

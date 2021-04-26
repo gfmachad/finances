@@ -16,7 +16,7 @@
 }
 
 html {
-  font-size: 93, 75%; /* 15px */
+  font-size: 93.75%; /* 15px */
 }
 
 body {
@@ -183,7 +183,6 @@ table tr:hover {
 }
 
 table tbody td {
-  text-align: left;
   background: var(--white);
   padding: 1rem 2rem;
 }
@@ -211,6 +210,7 @@ td.expense {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  z-index: 99;
 }
 .modal-overlay.active {
   opacity: 1;
@@ -222,6 +222,7 @@ td.expense {
   border-radius: 1rem;
   width: 90%;
   max-width: 500px;
+  z-index: 1;
 }
 /* ---Form ---*/
 #form {
@@ -242,7 +243,7 @@ input {
 .input-group {
   margin-top: 0.8rem;
 }
-.input-group small {
+.input-group .info {
   opacity: 0.5;
 }
 
@@ -253,7 +254,7 @@ input {
 }
 .input-group.actions .button,
 .input-group.actions button {
-  width: 50%;
+  width: 48%;
 }
 
 /* ---Footer ---*/
